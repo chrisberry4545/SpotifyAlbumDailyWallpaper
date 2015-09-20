@@ -94,14 +94,14 @@ public class GenerateWallpaperActivity extends Activity implements ConnectionSta
             int width = metrics.widthPixels;
             int height = metrics.heightPixels;
 
-//            boolean isPortrait = width < height;
-//            if (isPortrait) { //Scale by width
-//                double scale = width / albumImg.getWidth();
-//                height = (int)(albumImg.getHeight() * scale);
-//            } else { //Scale by height
-//                double scale = height / albumImg.getHeight();
-//                width = (int)(albumImg.getWidth() * scale);
-//            }
+            boolean isPortrait = width < height;
+            if (isPortrait) { //Scale by width
+                double scale = width / albumImg.getWidth();
+                height = (int)(albumImg.getHeight() * scale);
+            } else { //Scale by height
+                double scale = height / albumImg.getHeight();
+                width = (int)(albumImg.getWidth() * scale);
+            }
 
 
             Bitmap scaledBitmap = Bitmap.createScaledBitmap(albumImg, width, height, true);
